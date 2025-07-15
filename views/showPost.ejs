@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insta Post</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <h1>Insta Post</h1>
+
+    <h2>Total Post is: <%= count %></h2>
+
+    <table>
+
+        <tr>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Image</th>
+            <th>Edit</th>
+            <th>Delete</th>
+
+        </tr>
+
+        <% for(post of posts){ %>
+            <tr>
+                <td><%= post.id %></td>
+                <td><%= post.username %></td>
+                <td><%= post.email %></td>
+                <td><img src="/<%= post.image %>" class="img"></td>
+                <td>
+                    <form method="get" action="/posts/<%= post.id %>/edit">
+                        <button class="edit">Edit</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="get" action="/posts/<%= post.id %>/delete">
+                        <button class="delete">Delete</button>
+                    </form>
+                </td>
+
+            </tr>
+        <% } %>
+
+    </table>
+
+    <br><br><br>
+
+    <form method="get" action="/posts/newPost">
+        <button class="create">Create New User</button>
+    </form>
+
+</body>
+</html>

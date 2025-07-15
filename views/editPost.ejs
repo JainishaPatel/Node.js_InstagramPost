@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <h2>Edit Your Post</h2>
+
+    <h3>You can change only <mark>Username</mark> and <mark>Image URL</mark></h3>
+
+    <br><br>
+
+    <form method="post" action="/posts/<%= post.id %>?_method=PATCH">
+        <h3>Username:</h3>
+        <textarea name="username"><%= post.username %></textarea>
+
+        <br><br>
+
+        <h3>Password:</h3>
+        <input type="password" name="password" placeholder="enter your password">
+
+        <br><br>
+
+        <h3>Image URL:</h3>
+        <textarea name="image"><%= post.image %></textarea>
+
+        <br><br><br><br>
+
+        <button>Submit</button>
+
+    </form>
+
+    
+    
+</body>
+</html>

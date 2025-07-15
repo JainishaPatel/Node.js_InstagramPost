@@ -1,0 +1,5 @@
+# Node modules (always ignore)
+node_modules/
+
+# Env file (contains sensitive info)
+.env
